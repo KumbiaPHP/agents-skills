@@ -1,2 +1,2 @@
 # Agents and skills
-KumbiaPHP community agents and skill for AI 
+KumbiaPHP community agents and skills for AI 
