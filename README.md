@@ -44,7 +44,7 @@ The repository-owned `.github/workflows/skill-scanner.yml` scans `skills/` on pu
 skill-scanner scan-all skills --recursive --check-overlap --format sarif --output results.sarif --fail-on-severity high
 ```
 
-The scanner is best-effort: no findings are not a security certification and do not replace human review. Results can include false positives and false negatives. Cloud-backed and secret-based analyzers are intentionally disabled; the workflow uses local keyless analyzers only.
+The scanner is best-effort: a lack of findings is not a security certification and does not replace human review. Results can include false positives and false negatives. Cloud-backed and secret-based analyzers are intentionally disabled; the workflow uses local keyless analyzers only.
 
 ## Maintenance policy
 
