@@ -36,6 +36,20 @@ Skills are operational guidance, not broad framework tutorials. Each skill follo
 | `kumbiaphp-create-view` | Create or modify `.phtml` views while preserving MVC separation. |
 | `kumbiaphp-work-with-active-record` | Perform persistence operations through KumbiaPHP ActiveRecord. |
 
+## Agent Skills scanner
+
+The repository-owned `.github/workflows/skill-scanner.yml` scans `skills/` on pushes to `master`, pull requests targeting `master` when the relevant paths change, and manual dispatch. It installs the reviewed `cisco-ai-skill-scanner==2.0.13` release and runs:
+
+```bash
+skill-scanner scan-all skills --recursive --check-overlap --format sarif --output results.sarif --fail-on-severity high
+```
+
+The scanner is best-effort: no findings are not a security certification and do not replace human review. Results can include false positives and false negatives. Cloud-backed and secret-based analyzers are intentionally disabled; the workflow uses local keyless analyzers only.
+
+## Maintenance policy
+
+Scanner and action pins are updated through reviewed pull requests after checking release notes and rerunning the exact scan command. Periodic or dependency automation is not currently enabled; updates are maintainer-reviewed.
+
 ## KumbiaPHP Approach
 
 - Prefer KumbiaPHP-native functionality and the target project's established conventions.
